@@ -27,8 +27,8 @@ jobs:
 
       - name: Start Building
         run: |
-          wget https://raw.githubusercontent.com/akhilnarang/scripts/master/setup/android_build_env.sh
-          sudo -E bash android_build_env.sh
+          wget https://raw.githubusercontent.com/RooGhz720/RooGhz720/main/env.sh
+          sudo -E bash env.sh
           git clone --depth=1 https://github.com/RooGhz720/perfx_sweet_kernel.git -b main kernel
           cd kernel
           sudo -E bash build.sh
