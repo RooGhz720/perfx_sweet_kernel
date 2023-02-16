@@ -1,5 +1,5 @@
 kind: pipeline
-name: Sweet_StormBreaker
+name: perf sweet
 
 platform:
   os: linux
@@ -9,17 +9,17 @@ clone:
   depth: 1
 
 steps:
-  - name: setup&kramel
+  - name: setup
     image: starlight2834/ci_docker:latest
     environment:
       BOTTOKEN:
-        from_secret: token
+        from_secret: BOT_API
       CHATID:
-        from_secret: chat_id
+        from_secret: CHAT_ID
     commands:
       - mkdir nbm69 && cd nbm69
       - apt update && apt-get install -y build-essential bc python curl git zip ftp gcc-aarch64-linux-gnu gcc-arm-linux-gnueabi libssl-dev lftp zstd wget libfl-dev clang flex bison cpio
-      - wget https://raw.githubusercontent.com/stormbreaker-project/kernel_xiaomi_sweet/V2/kramel.sh
+      - wget https://raw.githubusercontent.com/RooGhz720/perfx_sweet_kernel/main/kramel.sh
       - chmod +x kramel.sh
       - bash kramel.sh
 
